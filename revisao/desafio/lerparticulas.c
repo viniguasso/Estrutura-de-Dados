@@ -17,7 +17,7 @@ int main() {
 
     // percorrer o arquivo/procurador extraindo de cada linha x e y
     do {
-        fscanf(procurador, "%d,%d", &x, &y);
+        fscanf(procurador, "%d, %d", &x, &y);
         qtdParticulas ++;
         if (x>0 && y>0) {
             conta1q ++;
@@ -38,12 +38,10 @@ int main() {
 
     //exibir
     procuradorSaida = fopen("relatorio.txt", "w");
-    fprintf(procuradorSaida,"Foram analisadas %d particulas\n", qtdParticulas);
-    fprintf(procuradorSaida,"1º Quadrante %d\n", conta1q);
-    fprintf(procuradorSaida,"2º Quadrante %d\n", conta2q);
-    fprintf(procuradorSaida,"3º Quadrante %d\n", conta3q);
-    fprintf(procuradorSaida,"4º Quadrante %d\n", conta4q);
-    fprintf(procuradorSaida,"Origem %d\n", contaOrigem);
+    fprintf(procuradorSaida,"Foram analisadas %d particulas:\n\n", qtdParticulas);
+    fprintf(procuradorSaida,"				|\n				|\n	2ºQ = %d		|		1ºQ = %d\n				|\n", conta2q, conta1q);
+    fprintf(procuradorSaida,"------------- O = %d -------------\n", contaOrigem);
+	fprintf(procuradorSaida,"				|\n	3ºQ = %d    	|		4ºQ = %d\n				|\n				|\n", conta3q, conta4q);
 
     fclose(procuradorSaida);
     fclose(procurador);
