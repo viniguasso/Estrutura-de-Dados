@@ -1,33 +1,20 @@
-// Revisão arquivos, struct, matrizes e funções
-// Construir um programa que receba nome, altura de um possível atleta.
 #include <stdio.h>
-#define TAM 2
-
-typedef struct{
-	char nome[10];
-	float altura, peso;
-}atleta;
-
-char *escolhe(atleta a);
+#include <stdlib.h>
 
 int main(void) {
-	atleta umatleta;
-	printf("\nQual seu nome? ");
-	scanf("%s", umatleta.nome);
-	printf("\nQual o seu peso em KG? ");
-	scanf("%f", &umatleta.peso);
-	printf("\nQual a sua altura em cm? ");
-	scanf("%f", &umatleta.altura);
-	char *resposta = escolhe(umatleta);
-	printf("\nEsporte: %s", resposta);
-}
-
-char *escolhe(atleta a) {
-	if (a.altura<180 && a.peso<70) {
-		return "Atletismo";
+	FILE *procurador;
+	char nomeArquivo[200], linha[200];
+	printf("Nome do arquivo: ");
+	scanf("%s", nomeArquivo);
+	procurador = fopen(nomeArquivo, "r");
+	if (!procurador) {
+		printf("Arquivo não encontrado\n");
+		exit(0);
 	}
-	else if (a.altura>180 && a.peso<70) {
-		return "Volei ou BVasquete";
-	}
-	return "Futebol";
+	do {
+		fgets(linha, 200, procurador);
+		printf("%s", linha);
+	}while(!feof(procurador));
+	fclose(procurador);
+	return 1;
 }
