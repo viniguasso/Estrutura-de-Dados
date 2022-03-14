@@ -1,0 +1,6 @@
+Foram analisadas 10 particulas
+1º Quadrante 0
+2º Quadrante 4
+3º Quadrante 1
+4º Quadrante 5
+Origem 0
