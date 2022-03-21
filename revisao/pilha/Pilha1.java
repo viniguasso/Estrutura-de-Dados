@@ -1,9 +1,7 @@
 import java.util.Stack;
-
 public class Pilha1 {
     public static void main(String args[]){
         Stack pilha = new Stack();
-
         pilha.push(10); // push equivalente ao add
         pilha.push(100);
         pilha.push(12);
@@ -15,8 +13,10 @@ public class Pilha1 {
             System.out.println("Pilha vazia!");
         }
         
-        System.out.println("Topo: " + pilha.speek());
+        System.out.println("Topo: " + pilha.peek());
 
-        System.out.println("Topo: " + pilha.size());
+        System.out.println("Quantidade de elementos: " + pilha.size());
+    
+        System.out.println("O numero 12 esta ou nao na pilha? " + pilha.contains(12));
     }
 }

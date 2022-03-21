@@ -11,7 +11,7 @@ int main() {
     //Verificar se o arquvio ja existe. Se sim, encerra o programa, se não, fecha e abre o modo esxrita w
     procurador = fopen(nomeArquivo, "r");
     if (procurador) {
-        printf("Arquivo ja existe, programa sera finalizado");
+        printf("Arquivo ja existe, programa será finalizado");
         fclose(procurador);
         exit(0);
     }
