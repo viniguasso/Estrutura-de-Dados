@@ -23,11 +23,11 @@ int contarNos(Celula *topo) {
 }
 
 int main(void) {
-	int valor;
 	Celula *pilha1 = NULL; 
     Celula *pilhaImpares = NULL;
 	FILE *procurador;
-	char nomeArquivo[200], linha[200];
+	char nomeArquivo[200];
+    int valor;
 	printf("Nome do arquivo: ");
 	scanf("%s", nomeArquivo);
 	procurador = fopen(nomeArquivo, "r");
