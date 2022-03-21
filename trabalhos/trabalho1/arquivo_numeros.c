@@ -8,7 +8,6 @@ int main() {
     int qtdNumeros;
     printf("Qual o nome do arquivo de saida contendo os numeros? ");
     scanf("%s", nomeArquivo);
-    //Verificar se o arquvio ja existe. Se sim, encerra o programa, se não, fecha e abre o modo esxrita w
     procurador = fopen(nomeArquivo, "r");
     if (procurador) {
         printf("Arquivo ja existe, programa será finalizado");

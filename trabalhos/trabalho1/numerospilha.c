@@ -22,17 +22,6 @@ int contarNos(Celula *topo) {
     return qtd;
 }
 
-void exibir(Celula *topo) {
-    if (!topo) {
-        printf("Pilha vazia!");
-        return;
-    }
-    Celula *p;
-    for (p = topo; p; p = p->prox) {
-        printf("%d\t", p->dado);
-    }
-}
-
 int main(void) {
 	int valor;
 	Celula *pilha1 = NULL; 
@@ -49,13 +38,10 @@ int main(void) {
 	do {
 		fscanf(procurador, "%d", &valor);
 		pilha1 = inserir(valor, pilha1);
-
-	}while(!feof(procurador));
+	} while(!feof(procurador));
 	fclose(procurador);
-
-	printf("Endereço do ultimo elemento: %p\n", pilha1);
+	printf("Endereco do ultimo elemento: %p\n", pilha1);
     printf("Valor do ultimo elemento: %d\n", pilha1->dado);
     printf("O tamanho da pilha um e: %d\n", contarNos(pilha1));
-    exibir(pilha1);
 	return 1;
 }
