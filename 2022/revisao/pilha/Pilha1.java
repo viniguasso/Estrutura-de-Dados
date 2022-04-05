@@ -1,7 +1,7 @@
 import java.util.Stack;
 public class Pilha1 {
     public static void main(String args[]){
-        Stack pilha = new Stack();
+        var pilha = new Stack();
         pilha.push(10); // push equivalente ao add
         pilha.push(100);
         pilha.push(12);
