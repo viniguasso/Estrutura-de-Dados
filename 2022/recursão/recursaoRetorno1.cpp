@@ -51,11 +51,11 @@ int somarR(int *vetor, int n) {
 
 int maiorR(int *vetor, int n) {
 	if (n > 0) {
-		int vemDeCima = maiorR(vetro, n - 1);
-		if (vemDeCima > veotr[n - 1]) return vemDeCima;
+		int vemDeCima = maiorR(vetor, n - 1);
+		if (vemDeCima > vetor[n - 1]) return vemDeCima;
 		return vetor[n - 1];
 	}
-	return vetor[n]
+	return vetor[n];
 }
 
 int main () {

@@ -29,6 +29,33 @@ void exibirR(Celula *lista) {
 	}
 }
 
+int somarR(Celula *lista) {
+	if (lista) {
+		return lista->dado + somarR(lista->prox);	
+	}
+	return 0;
+}
+
+int contarParesR(Celula *lista) {
+	if (lista) {
+		if (lista->dado % 2 == 0)
+			return 1 + contarParesR(lista->prox); //empilho contando 1 par
+		return 0 + contarParesR(lista->prox); //empilho contando 0
+	}
+	return 0; //passei por toda a lista
+}
+
+int somaParesR(Celula *lista) {
+	
+}
+
+int contarNosR(Celula *lista) {
+	if (lista) {
+		return 1 + contarNosR(lista->prox);
+	}
+	return 0; //passei por toda a lista
+}
+
 int main () {
 	Celula *lista = NULL;
 
@@ -37,5 +64,11 @@ int main () {
 	lista = inserirR(4, lista);
 	lista = inserirR(12, lista);
 	exibirR(lista);
-	
+
+	cout << "Na lista tem " << contarNosR(lista) << " elementos." << endl;
+	cout << "A soma dos elementos do vetor é " << somarR(lista) << endl;
+	cout << "A quantidade de pares é: " << contarParesR(lista) << endl;
+	cout << "A soma dos pares é: " << somaParesR(lista) << endl;
+
+	return 1;
 }
