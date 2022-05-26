@@ -102,7 +102,6 @@ int main() {
 
     exibir(fila1, "Fila de prioridades\n");
 
-
     inserir2("n100", &fila2);
     inserir2("n110", &fila2);
     inserir2("n120", &fila2);
